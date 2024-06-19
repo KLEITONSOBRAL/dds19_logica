@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Determinação de Categoria</title>
+    <script>
+        function determinarCategoria() {
+            
+            let idade = parseInt(document.getElementById('idade').value);
+            
+            
+            let categoria;
+            if (idade >= 0 && idade <= 12) {
+                categoria = 'Infantil';
+            } else if (idade >= 13 && idade <= 17) {
+                categoria = 'Adolescente';
+            } else if (idade >= 18 && idade <= 59) {
+                categoria = 'Adulto';
+            } else if (idade >= 60) {
+                categoria = 'Idoso';
+            } else {
+                categoria = 'Idade inválida';
+            }
+            
+            
+            document.getElementById('categoria').innerText = 'Categoria: ' + categoria;
+        }
+    </script>
+</head>
+<body>
+    <h1>Determinação de Categoria</h1>
+    <div>
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" min="0"><br><br>
+        
+        <button onclick="determinarCategoria()">Determinar Categoria</button>
+    </div>
+    <h2 id="categoria"></h2>
+</body>
+</html>
